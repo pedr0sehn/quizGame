@@ -13,10 +13,9 @@ var trueorfalse
 var clickState = false
 var acertos = 0
 
-/* each question array works like this: [0] = ask of the current question, the last index in the array is the answer for the question, 
-the penult is a variable called "trueorfalse" or "multichoise" these variables are just there for indentify what is the type of the question
-
-
+/* 
+    each question array works like this: index0 = ask of the current question, the last index in the array is the answer for the question, 
+    the penult is a variable called "trueorfalse" or "multichoise" these variables are just there for indentify what is the type of the question
 */
 
 var question1 = ["Quais são os seguintes países dos BRICS:", "A) Bangladesh, Russia, Indonésia, Casaquistão e Sudão do Sul", "B) Bulgaria, Romênia, India, China e Singapura", "C) Brasil, Russia, India, China e Africa do Sul", "D) Brazil, Russia, Indonésia, China e Singapura", multichoice, "c"]
