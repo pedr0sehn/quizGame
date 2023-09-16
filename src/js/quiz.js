@@ -8,18 +8,24 @@ setTimeout(() => {
     body.appendChild(credits)
 }, 500)
 
-var multiplaescolha
+var multichoice
 var trueorfalse
 var clickState = false
 var acertos = 0
 
-var question1 = ["Quais são os seguintes países dos BRICS:", "A) Bangladesh, Russia, Indonésia, Casaquistão e Sudão do Sul", "B) Bulgaria, Romênia, India, China e Singapura", "C) Brasil, Russia, India, China e Africa do Sul", "D) Brazil, Russia, Indonésia, China e Singapura", multiplaescolha, "c"]
+/* each question array works like this: [0] = ask of the current question, the last index in the array is the answer for the question, 
+the penult is a variable called "trueorfalse" or "multichoise" these variables are just there for indentify what is the type of the question
+
+
+*/
+
+var question1 = ["Quais são os seguintes países dos BRICS:", "A) Bangladesh, Russia, Indonésia, Casaquistão e Sudão do Sul", "B) Bulgaria, Romênia, India, China e Singapura", "C) Brasil, Russia, India, China e Africa do Sul", "D) Brazil, Russia, Indonésia, China e Singapura", multichoice, "c"]
 var question2 = ["Oi", "1", "0", trueorfalse, "Verdadeiro"]
 var question3 = ["A", "I", "O", trueorfalse, "Verdadeiro"]
-var question5 = ["E", "I", "O", trueorfalse, "Verdadeiro"]
+var question5 = ["E", "I", "O", multichoice, "a"]
 var question4 = ["R", "I", "O", trueorfalse, "Verdadeiro"]
-var question6 = ["S", "I", "O", trueorfalse, "Verdadeiro"]
-var question7 = ["T", "I", "O", trueorfalse, "Verdadeiro"]
+var question6 = ["S", "I", "O", multichoice, "b"]
+var question7 = ["T", "I", "O", multichoice, "d"]
 var question8 = ["U", "I", "O", trueorfalse, "Verdadeiro"]
 var question9 = ["V", "I", "O", trueorfalse, "Verdadeiro"]
 var question10 = ["X", "I", "O", trueorfalse, "Verdadeiro"]
@@ -29,7 +35,15 @@ var questions = [question1, question2, question3, question4, question5, question
 var currentNumber = 0
 var pastCurrentNumber = currentNumber - 1
 
-var currentQuestion = questions[currentNumber]
+function checkCurrentNumber(){
+    setInterval(()=>{
+        console.log(currentNumber)
+    }, 2000)
+    return currentNumber
+}
+
+var currentQuestion = questions[checkCurrentNumber()]
+
 
 var ask = currentQuestion[0]
 
@@ -38,7 +52,7 @@ function createQ() {
     clickState = false
 
     var checkAnswer = () => {
-        if (currentQuestion.includes(multiplaescolha)) {
+        if (currentQuestion.includes(multichoice)) {
             return 4
         } else {
             return 2
@@ -125,13 +139,8 @@ function createQ() {
         let answer = [answer1, answer2]
         let answerText = [answerText1, answerText2]
 
-        for (let i = 0; i < checkAnswer(); i++) {
-            let j = "abcd"
-            answer[i].classList.add(`${j[i]}`)
-            answerText[i].classList.add(`${j[i]}`)
-            answerText[i].textContent = `${currentQuestion[i + 1]}`
-            answer[i].textContent = `${j[i] + ")".toUpperCase()}`
-        }
+        answer1.innerText="Verdadeiro"
+        answer2.innerText="Falso"
         answer.forEach(answers => {
             answers.addEventListener('click', () => {
                 if (clickState == false) {
