@@ -42,8 +42,8 @@ function checkCurrentNumber(){
     }, 2000)
 }
 
-var currentQuestion = questions[checkCurrentNumber()]
-
+var currentQuestion
+currentQuestion = questions[checkCurrentNumber()]
 
 var ask = currentQuestion[0]
 
