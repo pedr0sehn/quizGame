@@ -38,8 +38,8 @@ var pastCurrentNumber = currentNumber - 1
 function checkCurrentNumber(){
     setInterval(()=>{
         console.log(currentNumber)
+        return currentNumber
     }, 2000)
-    return currentNumber
 }
 
 var currentQuestion = questions[checkCurrentNumber()]
