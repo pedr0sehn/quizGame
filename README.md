@@ -1,3 +1,3 @@
 # quizGame
 
-This project isn't complete yet
+This project isn't finished yet
