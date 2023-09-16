@@ -11,14 +11,14 @@ setTimeout(() => {
 var multichoice
 var trueorfalse
 var clickState = false
-var acertos = 0
+var correctAnswers = 0
 
 /* 
     each question array works like this: index0 = ask of the current question, the last index in the array is the answer for the question, 
     the penult is a variable called "trueorfalse" or "multichoise" these variables are just there for indentify what is the type of the question
 */
 
-var question1 = ["Quais são os seguintes países dos BRICS:", "A) Bangladesh, Russia, Indonésia, Casaquistão e Sudão do Sul", "B) Bulgaria, Romênia, India, China e Singapura", "C) Brasil, Russia, India, China e Africa do Sul", "D) Brazil, Russia, Indonésia, China e Singapura", multichoice, "c"]
+var question1 = ["Which countrys are in BRICS:", "A) Bangladesh, Russia, Indonesia, Kazakhstan and Southern Sudan", "B) Bulgaria, Romania, India, China and Singapore", "C) Brazil, Russia, India, China and South Africa", "D) Brazil, Russia, Indonesia, China and Singapore", multichoice, "c"]
 var question2 = ["Oi", "1", "0", trueorfalse, "Verdadeiro"]
 var question3 = ["A", "I", "O", trueorfalse, "Verdadeiro"]
 var question5 = ["E", "I", "O", multichoice, "a"]
@@ -101,7 +101,7 @@ function createQ() {
                         ++currentNumber
                     }, 1000);
                 } else if (clickState == true) {
-                    console.log("não")
+                    console.log("you can't")
                 }
             })
         })
@@ -138,8 +138,8 @@ function createQ() {
         let answer = [answer1, answer2]
         let answerText = [answerText1, answerText2]
 
-        answer1.innerText="Verdadeiro"
-        answer2.innerText="Falso"
+        answer1.innerText="True"
+        answer2.innerText="False"
         answer.forEach(answers => {
             answers.addEventListener('click', () => {
                 if (clickState == false) {
@@ -155,8 +155,8 @@ function createQ() {
                         ++currentNumber
                     }, 1000);
                     if (answer1.textContent[0] == currentQuestion[6]) {
-                        acertos++
-                        console.log(acertos)
+                        correctAnswers++
+                        console.log(correctAnswers)
                     }
                 } else if (clickState == true) {
                     console.log("não")
@@ -176,15 +176,6 @@ function createQ() {
     console.log(currentQuestion)
 }
 
-
-function quiz() {
-    if (currentNumber === pastCurrentNumber && currentNumber < 10) {
-
-    } else {
-        createQ()
-    }
-}
-
 startQuizButton.addEventListener('click', () => {
     startQuizButton.classList.add('clicked')
     setTimeout(() => {
@@ -201,7 +192,7 @@ if (currentNumber == 10) {
     setTimeout(() => {
         var restartBtn = document.createElement('div')
         restartBtn.classList.add('coolButtonTemplate')
-        restartBtn.innerText = "Reiniciar Quiz"
+        restartBtn.innerText = "Restart Quiz"
         body.appendChild(restartBtn)
         restartBtn.addEventListener('click', () => {
             restartBtn.classList.add('clicked')
