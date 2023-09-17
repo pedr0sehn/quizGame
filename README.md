@@ -1,3 +1,3 @@
 # quizGame
 
-This project isn't finished yet
+Just a math quiz that i made to improve my knowledge at javascript
