@@ -22,6 +22,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+a:link, a:visited{
+    color: #4183C4;
+}
+
 body {
     display: flex;
     margin: 0;
@@ -50,15 +54,11 @@ h3 {
     width: 160px;
     height: 100px;
     border-radius: 8px;
-    margin: 10px;
-    background-color: var(--blue);
+    margin: 24px;
+    background-color: var(--darkerBlue);
     cursor: pointer;
     transition: transform 0.5s;
     animation: appearing 0.5s;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-}
-.coolButtonTemplate.clicked {
-    animation: disappear 0.3s;
 }
 
 .divButtonTemplate {
@@ -80,7 +80,7 @@ h3 {
     transform: scale(1.125);
 }
 .startQuizButton.clicked {
-    animation: disappear 0.415s;
+    animation: disappearing 0.75s;
 }
 
 .divAnswers {
@@ -99,7 +99,7 @@ h3 {
     cursor: pointer;
 }
 .answers.clicked {
-    animation: disappear 800ms;
+    animation: disappearing 800ms;
 }
 .answers:hover {
     box-shadow: 0 0 10px #19191d;
@@ -124,6 +124,14 @@ h3 {
 
 .answers.false {
     background-color: var(--amaranthRed);
+}
+
+footer{
+    position: absolute;
+    bottom: 20px;
+}
+.credits{
+    font-weight: 200;
 }
 
 @keyframes appearingSmall {
@@ -154,7 +162,7 @@ h3 {
     }
 }
 
-@keyframes disappear {
+@keyframes disappearing {
     0% {
     }
     25%{
