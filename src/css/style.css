@@ -1,17 +1,21 @@
 :root {
+    --amazon:         #376A64;
+    --jungleGreen:    #279C86;
+    --discordGreen:   #23a559;
+    --budGreen:       #6EB65F;
+    --green:          #198F24;
+    --yellow:         #ffd30d;
+    --orange:         #F29C46;
+    --uglyRed:        #E7574C;
+    --red:            #e22434;
+    --amaranthRed:    #c21f1f;
+    --japaneseViolet: #4D2F4D;
+    --purple:         #603cbd;
+    --discordBlue:    #5865F2;
+    --darkerBlue:     #134B83;
+    --coolBlue:       #2F76DC;
     --black: #141424;
     --white: #F6F6F0;
-    --blue: #134B83;
-    --coolBlue: #2F76DC;
-    --yellow: #EEC63D;
-    --red: #E7574C;
-    --green: #198F24;
-    --purple: #310D8F;
-    --jungleGreen: #279C86;
-    --orange: #F29C46;
-    --amazon: #376A64;
-    --japaneseViolet: #4D2F4D;
-
 }
 
 * {
@@ -53,6 +57,9 @@ h3 {
     animation: appearing 0.5s;
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
+.coolButtonTemplate.clicked {
+    animation: disappear 0.3s;
+}
 
 .divButtonTemplate {
     display: flex;
@@ -64,7 +71,6 @@ h3 {
     transition: transform 0.5s;
     animation: appearingSmall 0.75s;
 }
-
 .divButtonTemplate:hover {
     transform: scale(1.05);
 }
@@ -73,21 +79,8 @@ h3 {
     transition: transform 0.35s;
     transform: scale(1.125);
 }
-
-.coolButtonTemplate.clicked {
-    animation: disappear 0.3s;
-}
-
 .startQuizButton.clicked {
     animation: disappear 0.415s;
-}
-.answers.clicked{
-    animation: disappear 1.05s;
-}
-
-
-.sonicImgs {
-    width: 80px;
 }
 
 .divAnswers {
@@ -105,7 +98,9 @@ h3 {
     margin: 5px;
     cursor: pointer;
 }
-
+.answers.clicked {
+    animation: disappear 800ms;
+}
 .answers:hover {
     box-shadow: 0 0 10px #19191d;
 }
@@ -113,19 +108,23 @@ h3 {
 .answers.a {
     background-color: var(--red);
 }
-
 .answers.b {
-    background-color: var(--orange);
+    background-color: var(--discordBlue);
 }
-
 .answers.c {
-    background-color: var(--amazon);
+    background-color: var(--yellow);
 }
-
 .answers.d {
-    background-color: var(--japaneseViolet);
+    background-color: var(--discordGreen);
 }
 
+.answers.true {
+    background-color: var(--budGreen);
+}
+
+.answers.false {
+    background-color: var(--amaranthRed);
+}
 
 @keyframes appearingSmall {
     0% {
@@ -157,9 +156,10 @@ h3 {
 
 @keyframes disappear {
     0% {
+    }
+    25%{
         transform: scale(1.125);
     }
-
     100% {
         transform: scale(0);
     }
