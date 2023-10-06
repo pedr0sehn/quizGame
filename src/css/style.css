@@ -134,6 +134,10 @@ footer{
     font-weight: 200;
 }
 
+.hide{
+    visibility: hidden;
+}
+
 @keyframes appearingSmall {
     0% {
         transform: scale(0);
