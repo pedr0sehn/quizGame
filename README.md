@@ -1,3 +1,5 @@
 # quizGame
 
-Just a math quiz that i made to improve my knowledge in javascript
+A math quiz made with Javascript to test out my knowledge in programming
+
+You can run this quiz by opening the index.html file in your computer
